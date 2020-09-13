@@ -1,0 +1,23 @@
+{
+  "name": "card-printer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn --inspect -- index.ts",
+    "startDbg": "ts-node-dev --respawn --inspect --inspect-brk -- index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jimp": "^0.2.28",
+    "@types/node": "^14.10.1",
+    "@types/pdfkit": "^0.10.6",
+    "jimp": "^0.16.1",
+    "pdfkit": "^0.11.0",
+    "ts-node": "^8.9.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
+  }
+}
