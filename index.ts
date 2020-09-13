@@ -1,4 +1,3 @@
-import Jimp from 'jimp';
 import { promises as fs, createWriteStream, existsSync } from "fs";
 import PDFDocument from 'pdfkit';
 import { join } from 'path';
@@ -18,44 +17,6 @@ const printMargin = 5;
 
 const calibVerticalOffset = 0;
 const calibHorizOffset = -1;
-
-/*async function generateFrontside() {
-    var canvas = new Jimp(a4Width * pixelPerMM, a4Height * pixelPerMM);
-    var files = await fs.readdir('cards/Dragon/');
-
-    for (let row = 0; row < rows; row++) {
-        for (let col = 0; col < columns; col++) {
-            //var imageName = ((row * col) + 1).toString().padStart(3, '0') + '.png';
-            var imageIndex = row * columns + col;
-            var imageName = files[imageIndex];
-            var img = await Jimp.read(`cards/Dragon/${imageName}`);
-
-            img.resize(cardWidth * pixelPerMM, cardHeight * pixelPerMM);
-            canvas.composite(img, (printMargin + col * cardWidth) * pixelPerMM, (printMargin + row * cardHeight) * pixelPerMM);
-        }  
-    }
-
-
-    await canvas.writeAsync('front.png');
-
-    console.log('Done generating frontside!');
-}
-
-async function generateBackside() {
-    var canvas = new Jimp(a4Width * pixelPerMM, a4Height * pixelPerMM);
-    var img = await Jimp.read(`cards/backside.png`);
-    img.resize(cardWidth * pixelPerMM, cardHeight * pixelPerMM);
-
-    var xOffset = a4Width - cardWidth * columns - printMargin - calibHorizOffset;
-    for (let row = 0; row < rows; row++) {
-        for (let col = 0; col < columns; col++) {
-            canvas.composite(img, (xOffset + col * cardWidth) * pixelPerMM, (printMargin + calibVerticalOffset + row * cardHeight) * pixelPerMM);
-        }  
-    } 
-    
-    await canvas.writeAsync('back.png');
-    console.log('Done generating backside!');
-}*/
 
 async function generateFrontside(doc: PDFKit.PDFDocument, path: string, files: string[]) {
     for (let row = 0; row < rows; row++) {
