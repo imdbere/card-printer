@@ -16,7 +16,7 @@ const columns = 3;
 const printMargin = 5;
 
 const calibVerticalOffset = 0;
-const calibHorizOffset = -1;
+const calibHorizOffset = -1.5;
 
 async function generateFrontside(doc: PDFKit.PDFDocument, path: string, files: string[]) {
     for (let row = 0; row < rows; row++) {
